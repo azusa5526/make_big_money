@@ -1,0 +1,33 @@
+{
+  "A Debug Button": {
+    "prefix": "vdebugButton",
+    "body": [
+      "ElevatedButton.icon(",
+      "  onPressed: () {},",
+      "  icon: const Icon(Icons.bug_report),",
+      "  label: const Text('測試'),",
+      "),"
+    ],
+    "description": "A Debug Button"
+  },
+  "Create New Page": {
+    "prefix": "vnewpage",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "",
+      "class ${1:NewPage} extends StatelessWidget {",
+      "  const ${1:NewPage}({super.key});",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context) {",
+      "    return Scaffold(",
+      "      appBar: AppBar(title: const Text('New Page')),",
+      "      body: const Placeholder(),",
+      "    );",
+      "  }",
+      "}",
+      ""
+    ],
+    "description": "Create New Page"
+  }
+}
