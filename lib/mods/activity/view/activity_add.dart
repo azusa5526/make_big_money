@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'activity_theme_selector.dart';
 
 class ActivityAdd extends StatelessWidget {
   const ActivityAdd({super.key});
@@ -6,7 +7,7 @@ class ActivityAdd extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('New Page')),
+        appBar: AppBar(title: const Text('Add')),
         body: SizedBox(
           height: double.infinity,
           child: Stack(
@@ -25,26 +26,7 @@ class ActivityAdd extends StatelessWidget {
                             label: Text('Activity name'),
                             border: InputBorder.none),
                       ),
-                      DropdownMenu(
-                        expandedInsets: EdgeInsets.zero,
-                        width: MediaQuery.of(context).size.width,
-                        initialSelection: ColorLabel.green,
-                        inputDecorationTheme: const InputDecorationTheme(
-                            border: InputBorder.none),
-                        onSelected: (ColorLabel? color) {},
-                        dropdownMenuEntries: ColorLabel.values
-                            .map<DropdownMenuEntry<ColorLabel>>(
-                                (ColorLabel color) {
-                          return DropdownMenuEntry<ColorLabel>(
-                            value: color,
-                            label: color.label,
-                            enabled: color.label != 'Grey',
-                            style: MenuItemButton.styleFrom(
-                              foregroundColor: color.color,
-                            ),
-                          );
-                        }).toList(),
-                      ),
+                      const ActivityThemeSelector(),
                     ],
                   ),
                 ),
