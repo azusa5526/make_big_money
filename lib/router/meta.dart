@@ -9,6 +9,11 @@ class _Route {
 
 class Routes {
   static const home = _Route('home', title: '首頁');
-  static const activity = _Route('activity', title: 'Activity');
+  static const activity = (
+    home: _Route('activity_home', title: 'Activity Home'),
+    add: _Route('add_activity', title: 'Add'),
+    edit: _Route('edit_activity', title: 'Edit'),
+    activity: _Route('activity', title: 'Activity')
+  );
   static const login = (home: _Route('loginHome', title: '登入'));
 }

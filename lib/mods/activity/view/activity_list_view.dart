@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_iflood/utils/console.dart';
+import 'package:go_router/go_router.dart';
 
 class ActivityListView extends StatefulWidget {
   const ActivityListView({super.key});
@@ -19,17 +21,30 @@ class _ActivityListViewState extends State<ActivityListView> {
         Card(
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
           key: Key('$index'),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12.0),
-            height: 68,
-            color: Colors.white,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('Card ${_items[index]}'),
-                ReorderableDragStartListener(
-                    index: index, child: const Icon(Icons.reorder_outlined)),
-              ],
+          child: Ink(
+            decoration: const BoxDecoration(color: Colors.white),
+            child: InkWell(
+              onTap: () {
+                // Todo: check activityId is valid & chage route
+                context.push('/activity/$index');
+              },
+              onLongPress: () {
+                context.pushNamed('edit_activity');
+              },
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                height: 68,
+                // color: Colors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text('Card ${_items[index]}'),
+                    ReorderableDragStartListener(
+                        index: index,
+                        child: const Icon(Icons.reorder_outlined)),
+                  ],
+                ),
+              ),
             ),
           ),
         ),
