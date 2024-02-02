@@ -24,7 +24,7 @@ class _ActivityThemeSelectorState extends State<ActivityThemeSelector> {
   Widget build(BuildContext context) {
     return DropdownMenu(
         expandedInsets: EdgeInsets.zero,
-        width: MediaQuery.of(context).size.width,
+        // width: MediaQuery.of(context).size.width,
         initialSelection: ColorLabel.green,
         inputDecorationTheme:
             const InputDecorationTheme(border: InputBorder.none),
