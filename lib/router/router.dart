@@ -5,6 +5,9 @@ import '../mods/login/ui/login_homepage.dart';
 import '../mods/activity/view/activity_home.dart';
 import '../mods/activity/view/activity_edit.dart';
 import '../mods/activity/view/activity.dart';
+import '../mods/expense/view/expense_add.dart';
+import '../mods/expense/view/expense_edit.dart';
+
 import 'meta.dart';
 
 final router = GoRouter(
@@ -36,6 +39,16 @@ final router = GoRouter(
                   activityId: state.pathParameters['activityId'] as String);
             }),
       ],
+    ),
+    GoRoute(
+      path: '/expense/add',
+      name: Routes.expense.add.name,
+      builder: (context, state) => const ExpenseAdd(),
+    ),
+    GoRoute(
+      path: '/expense/edit',
+      name: Routes.expense.edit.name,
+      builder: (context, state) => const ExpenseEdit(),
     ),
     GoRoute(
         path: '/login',

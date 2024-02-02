@@ -11,9 +11,13 @@ class Routes {
   static const home = _Route('home', title: '首頁');
   static const activity = (
     home: _Route('activity_home', title: 'Activity Home'),
-    add: _Route('add_activity', title: 'Add'),
-    edit: _Route('edit_activity', title: 'Edit'),
+    add: _Route('activity_add', title: 'Add'),
+    edit: _Route('activity_edit', title: 'Edit'),
     activity: _Route('activity', title: 'Activity')
+  );
+  static const expense = (
+    add: _Route('expense_add', title: 'Add'),
+    edit: _Route('expense_edit', title: 'Edit'),
   );
   static const login = (home: _Route('loginHome', title: '登入'));
 }
