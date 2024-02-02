@@ -10,48 +10,46 @@ class ActivityAdd extends StatelessWidget {
         appBar: AppBar(title: const Text('Add')),
         body: SizedBox(
           height: double.infinity,
-          child: Stack(
+          child: Column(
             children: [
-              SingleChildScrollView(
-                  child: Form(
-                child: Container(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        onSaved: (inputValue) {
-                          // console('title inputValue', inputValue);
-                        },
-                        decoration: const InputDecoration(
-                            label: Text('Activity name'),
-                            border: InputBorder.none),
-                      ),
-                      const ActivityThemeSelector(),
-                    ],
+              Expanded(
+                child: SingleChildScrollView(
+                    child: Form(
+                  child: Container(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      children: [
+                        TextFormField(
+                          autofocus: true,
+                          onSaved: (inputValue) {
+                            // console('title inputValue', inputValue);
+                          },
+                          decoration: const InputDecoration(
+                              label: Text('Activity name'),
+                              border: InputBorder.none),
+                        ),
+                        const ActivityThemeSelector(),
+                      ],
+                    ),
+                  ),
+                )),
+              ),
+              Material(
+                child: Ink(
+                  decoration: const BoxDecoration(color: Colors.amberAccent),
+                  child: InkWell(
+                    onTap: () {},
+                    child: const SizedBox(
+                        width: double.infinity,
+                        height: 60,
+                        child: Center(
+                            child: Text(
+                          'Save',
+                          style: TextStyle(fontSize: 16.0),
+                        ))),
                   ),
                 ),
-              )),
-              Positioned(
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  child: Material(
-                    child: Ink(
-                      decoration:
-                          const BoxDecoration(color: Colors.amberAccent),
-                      child: InkWell(
-                        onTap: () {},
-                        child: const SizedBox(
-                            width: double.infinity,
-                            height: 60,
-                            child: Center(
-                                child: Text(
-                              'Save',
-                              style: TextStyle(fontSize: 16.0),
-                            ))),
-                      ),
-                    ),
-                  ))
+              )
             ],
           ),
         ));
