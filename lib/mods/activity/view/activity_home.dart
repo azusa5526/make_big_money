@@ -17,7 +17,7 @@ class ActivityHome extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            context.pushNamed('add_activity');
+            context.pushNamed('activity_add');
           },
           shape: const CircleBorder(),
           child: const Icon(Icons.add),

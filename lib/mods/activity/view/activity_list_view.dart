@@ -29,7 +29,7 @@ class _ActivityListViewState extends State<ActivityListView> {
                 context.push('/activity/$index');
               },
               onLongPress: () {
-                context.pushNamed('edit_activity');
+                context.pushNamed('activity_edit');
               },
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
