@@ -1,6 +1,5 @@
-import 'package:flutter_iflood/mods/activity/view/activity_add.dart';
-import 'package:flutter_iflood/utils/console.dart';
 import 'package:make_big_money/mods/activity/view/activity_add.dart';
+import 'package:make_big_money/utils/console.dart';
 import 'package:go_router/go_router.dart';
 import '../mods/login/ui/login_homepage.dart';
 import '../mods/activity/view/activity_home.dart';
@@ -8,6 +7,7 @@ import '../mods/activity/view/activity_edit.dart';
 import '../mods/activity/view/activity.dart';
 import '../mods/expense/view/expense_add.dart';
 import '../mods/expense/view/expense_edit.dart';
+import '../mods/lab/lab.dart';
 
 import 'meta.dart';
 
@@ -16,7 +16,12 @@ final router = GoRouter(
     GoRoute(
       path: '/',
       name: Routes.home.name,
-      redirect: (context, state) => '/activity',
+      redirect: (context, state) => '/lab',
+      // redirect: (context, state) => '/activity',
+    ),
+    GoRoute(
+      path: '/lab',
+      builder: (context, state) => const LabPage(),
     ),
     GoRoute(
       path: '/activity',
