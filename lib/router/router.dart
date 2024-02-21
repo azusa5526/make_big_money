@@ -1,5 +1,6 @@
 import 'package:flutter_iflood/mods/activity/view/activity_add.dart';
 import 'package:flutter_iflood/utils/console.dart';
+import 'package:make_big_money/mods/activity/view/activity_add.dart';
 import 'package:go_router/go_router.dart';
 import '../mods/login/ui/login_homepage.dart';
 import '../mods/activity/view/activity_home.dart';

@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_iflood/utils/console.dart';
+import 'package:make_big_money/utils/console.dart';
 import 'package:go_router/go_router.dart';
 
 class ActivityListView extends StatefulWidget {

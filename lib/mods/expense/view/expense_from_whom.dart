@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_iflood/utils/console.dart';
+import 'package:make_big_money/utils/console.dart';
 
 class ExpenseFromWhom extends StatefulWidget {
   const ExpenseFromWhom({super.key});
