@@ -14,10 +14,6 @@ class DataPoint {
   DataPoint({required this.xValue, required this.yValue});
 }
 
-// const options = {
-//   bottomTitles
-// }
-
 class TimeseriesLineChart extends StatefulWidget {
   const TimeseriesLineChart({super.key, required this.dataList});
 
