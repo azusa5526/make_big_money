@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:make_big_money/utils/console.dart';
 
 class ZoomableChart extends StatefulWidget {
   const ZoomableChart({
@@ -25,9 +26,8 @@ class _ZoomableChartState extends State<ZoomableChart> {
 
   @override
   void initState() {
+    initZoomChart();
     super.initState();
-    minX = 0;
-    maxX = widget.maxX;
   }
 
   @override
@@ -90,5 +90,18 @@ class _ZoomableChartState extends State<ZoomableChart> {
       },
       child: widget.builder(minX, maxX),
     );
+  }
+
+  @override
+  void didUpdateWidget(ZoomableChart oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.maxX != oldWidget.maxX) {
+      initZoomChart();
+    }
+  }
+
+  void initZoomChart() {
+    minX = 0;
+    maxX = widget.maxX;
   }
 }
